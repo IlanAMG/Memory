@@ -94,7 +94,7 @@ const App = () => {
         <h1>MEMORY</h1>
       </div>
         
-        {win && <div>Win</div>}
+        {win && <div className='win'><span>WIN !</span></div>}
 
       <div className='container'>
         {isStart ?
