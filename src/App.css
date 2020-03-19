@@ -1,38 +1,189 @@
-.App {
-  text-align: center;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+    vertical-align: baseline;
+    font-family: sans-serif;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: #2C324F;
+  height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+  transition: 300ms;
+  bottom: 0px;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.top-bar {
+  height: 57px;
+  width: 100vw;
+  background-color: #1F253E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-bar > h1 {
+  font-size: 1.8em;
+  text-transform: uppercase;
+	background: linear-gradient(to right, #21BFD7 0%, #2C84F0 50%, #A626FB);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.under-topbar {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.under-topbar > div {
+  color: #E3E3E3;
+  font-size: 1.5em;
+  width: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.restart {
+  margin: 5px;
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:11px 25px;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #3d768a;
+  outline: 0;
+}
+.restart:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color:#408c99;
+}
+
+.start {
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:linear-gradient(to bottom, #ca1cff 5%, #672b8a 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:28px;
+	font-weight:bold;
+	padding:22px 26px;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #3d768a;
+  position: absolute;
+  z-index: 2;
+  outline: none;
+}
+.start:hover {
+	background:linear-gradient(to bottom, #9124da 5%, #7c1092 100%);
+	background-color:#408c99;
+}
+
+.grid {
+  transition: 300ms;
+  display: flex;
+  width: 1000px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.cache {
+  background-image: url(./assets/dosCard.jpg);
+  height: 203px;
+  width: 138px;
+  z-index: 1;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.card {
+  position: relative;
+  border-radius: 10px;
+  background-color: #21D78F;
+  height: 202px;
+  width: 136px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
+  cursor: pointer;
+  transition: 300ms;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.hover:hover {
+  transform: scale(1.04);
+  transition: 300ms;
 }
